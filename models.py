@@ -2,7 +2,8 @@ import db
 import peewee
 import datetime
 
-""" No peewee não é preciso identificar a chave
+""" 
+    No peewee não é preciso identificar a chave
     primaria na criação, ele já cria um campo
     com auto incremento para chave primaria
     automaticamente.
