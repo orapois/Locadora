@@ -11,7 +11,6 @@ import datetime
 class Tipo(db.BaseModel):
     # Classe representa a tabela Tipo
     # A tabela possui o campo 'tipo', para saber qual tipo de usuario está acessando
-
     tipo = peewee.CharField(unique=True)
 
 class Usuarios(db.BaseModel):
