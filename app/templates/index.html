@@ -1,0 +1,8 @@
+{% if current_user.is_authenticated %}
+    <h1>{{current_user.nome}}</h1>
+    <a href="/admin">admin</a>
+{% else %}
+    <h1>Ninguém logado</h1>
+    <a href="/admin">admin</a>
+    <a href="{{url_for('login')}}">login</a>
+{% endif %}

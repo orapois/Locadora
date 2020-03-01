@@ -1,4 +1,9 @@
 import models
+from app import login_manager
+
+@login_manager.user_loader
+def pegar_usuario(id):
+    return models.Clientes.get(models.Clientes.id == id).select(models.Clientes.nome)
 
 class CrudTipo:
 
@@ -25,3 +30,7 @@ class CrudTipo:
         tipo.tipo = arg
         tipo.save()
         return True
+
+class Verificar:
+    def clienteExiste(cpf):
+        return models.Clientes.get(models.Clientes.cpf == cpf)

@@ -1,7 +1,7 @@
 import db
 import peewee
 import datetime
-
+from flask_login import UserMixin
 """ 
     No peewee não é preciso identificar a chave
     primaria na criação, ele já cria um campo
@@ -23,7 +23,7 @@ class Usuarios(db.BaseModel):
     tipo = peewee.ForeignKeyField(Tipo)
     dataCadastro = peewee.DateTimeField(default=datetime.datetime.now)
 
-class Clientes(db.BaseModel):
+class Clientes(db.BaseModel, UserMixin):
     # Classe que representa a tabela clientes
 
     nome = peewee.CharField(null=False)
